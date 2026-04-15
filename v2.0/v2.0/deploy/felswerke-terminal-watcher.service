@@ -1,0 +1,17 @@
+[Unit]
+Description=Felswerke Terminal GitHub watcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/felswerke-terminal
+Environment=DEPLOY_BRANCH=main
+Environment=POLL_INTERVAL=60
+ExecStart=/usr/bin/bash /home/pi/felswerke-terminal/scripts/watch-github.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
