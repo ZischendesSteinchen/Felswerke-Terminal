@@ -5,3 +5,8 @@ out/
 .env*.local
 *.tsbuildinfo
 next-env.d.ts
+
+# v2.0/ is the local working directory — only track its v2.0/ and v2.1/ subfolders
+v2.0/*
+!v2.0/v2.0/
+!v2.0/v2.1/
